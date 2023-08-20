@@ -9,9 +9,9 @@ app=Flask(__name__)
 @app.route('/')
 def welcome(): 
     return render_template('index.html')
-@app.route('/login')
-def login():
-    return render_template('login.html')
+@app.route('/select')
+def select():
+    return render_template('select_clg.html')
 @app.route('/reg')
 def reg():
     reg=1
@@ -29,8 +29,8 @@ def data():
      data9 = 75
      data10 = 1
      arr1 = np.array([[data1,data2,data3,data4,data5,data6,data7,data8,data9,data10]])
-     pred=model.predict(arr1)
-     return render_template('result.html',data=pred)
+     data11=model.predict(arr1)
+     return render_template('result.html',data=data11)
 
 if __name__=='__main__':
     app.run(debug=True)

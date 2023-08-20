@@ -1,25 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link   rel="stylesheet" href="{{ url_for('static', filename=' CSS/style.css') }}" />
+<html lang="en" dir="ltr">
 
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='CSS/style.css')}}">
+  <script src="https://kit.fontawesome.com/418aae1497.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to Your Website</h1>
-    </header>
-    <nav>
-        <ul class="nav-buttons">
-            <li><a href="login" class="nav-button">Login</a></li>
-            <li><span class="nav-divider">/</span></li>
-            <li><a href="reg" class="nav-button">Register</a></li>
-        </ul>
-    </nav>
-    <main>
-        <!-- Your main content here -->
-    </main>
-    
+  <div id="header">
+    <div class="container">
+      <nav>
+        <a class="name" href="">Logo or Website Name</a>
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="{{ url_for('select') }}">Select College</a></li>
+          <li><a href="#contact">Request</a></li>          
+          <li>
+            <img src="/images/sun-solid.svg" id="icon" alt="">
+          </li>
+      </nav>
+
+      <div class="text">
+        <h1>Hey There! <span class="myname">Engineer</span><br></h1>
+        <div>
+          <h3>Website for <span class="auto-type"></span></h3>
+        </div>
+        <p class="brief">
+          Proj brief description .....Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto error numquam impedit possimus ea ut deserunt dignissimos similique eveniet nesciunt minus rem, velit praesentium ducimus sit tenetur ipsam placeat rerum. </p>
+      </div>
+
+      <div class="sm-webpic">
+        <div>
+            <a href="#another page"  class="btn">Predict Yours</a>
+          </div>
+        <div class="sm">
+        </div>
+        <div class="webpic">
+          <img class="webpic-img" src="logo" alt="">
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+
+  <!--about-->
+  <div id="about">
+    <div class="container">
+        <div class="aboutmain">
+          <h1 class="subtit">About </h1>
+          <p align="justify" class="about-info">
+About the project .....Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quaerat tempora facere impedit recusandae sed neque harum qui quibusdam necessitatibus voluptas sint unde eligendi ipsum nemo, dolor velit, maiores illo.
+          </p>
+        </div>
+     </div>
+    </div>
+          
+ 
+ 
+
+  <!--contact-->
+
+  <div id="contact">
+    <div class="container">
+      <div class="c">
+        <div class="contact-left">
+          <h1 class="subtit">Contact Us</h1>
+          <p><i class="fa-solid fa-envelope"></i>@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i>Number</p>
+        </div>
+        <div class="whatsapp">
+          <p><a href="https://api.whatsapp.com/send/?phone=%2B916305656162&text&type=phone_number&app_absent=0"
+              target="_blank"><i class="fa-brands fa-whatsapp"></i></a> Whatsapp</p>
+        </div>
+
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button class="sub" type="submit" name="submit">Submit</button>
+
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <h2 class="footer-text">Built By Unity</h2>
+  </div>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="script.js"></script>
+
 </body>
+
 </html>

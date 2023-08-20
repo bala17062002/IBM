@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .animation-container {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+  }
+
+  .animated-text {
+    position: absolute;
+    font-size: 36px;
+    color: #6597d4;
+    white-space: nowrap;
+    animation: slideInRight 5s linear infinite;
+  }
+
+  .salary-container {
+    background-color: #0f0f0f;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    color: white;
+    margin-left: 20px;
+  }
+
+  .salary-amount {
+    font-size: 36px;
+    color: #6597d4;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .note {
+    font-size: 14px;
+    color: #777;
+    margin-top: 20px;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>
+<title>Text Animation and Salary</title>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="animated-text">Welcome to Our Company</div>
+  </div>
+  <div class="salary-container">
+    <div class="salary-amount">$75,000</div>
+    <div class="note">This is your salary package.</div>
+  </div>
+</body>
+</html>
