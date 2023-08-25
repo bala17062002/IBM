@@ -1,36 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style_input.css" />
+  <title>Browser</title>
+</head>
+
 <body>
-    <header>
-        <h1>Welcome to Your Website</h1>
-    </header>
-    <nav>
-        <ul class="nav-buttons">
-            <li><a href="login.html" class="nav-button">Login</a></li>
-            <li><span class="nav-divider">/</span></li>
-            <li><a href="register.html" class="nav-button">Register</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="login-container">
-            <h2>Login</h2>
-            <form action="select_clg.html">
-                <input type="text" placeholder="Username" name="username">
-                <input type="password" placeholder="Password" name="password">
-                <button type="submit">Login</button>
-            </form>
-            <div class="login-links">
-                <a href="reset_password.html">Forgot Password?</a>
-                <p>Don't have an account? <a href="register.html">Register</a></p>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <p>Contact us at: contact@example.com</p>
-    </footer>
+  <h1></h1>
+  <form action="/input" method="post">
+    <div class="radio-group">
+      <label for="gender">Gender:</label>
+      <input type="radio" id="male" name="gender" value=1>
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value=2>
+      <label for="female">Female</label>
+      
+    </div>
+    <br>
+    <label for="dropdown1">School Board</label>
+    
+    <select id="dropdown1" name="drop">
+      <option value=1>State</option>
+      <option value=0>Others</option>
+    </select>
+
+    <br><br>
+
+    <label for="schoolPercentage">School Percentage:</label>
+    <input type="number" id="schoolPercentage" name="schoolPercentage" min="0" max="100" step="0.01">
+
+    <br><br>
+   <!--<div class="radio-group"><option value="{{ option }}">{{ option }}</option>
+    <label for="educationType">Education Type:</label>
+    <input type="radio" id="intermediate" name="educationType" value="intermediate">
+    <label for="intermediate">Intermediate</label>
+    <input type="radio" id="diploma" name="educationType" value="diploma">
+    <label for="diploma">Diploma</label>
+   </div>-->
+   <label for="dropdown4">Inter_Board</label>
+   <select id="dropdown4" name="Iboard">
+     <option value=1>State</option>
+     <option value=0>Others</option>
+   </select>
+                       
+    <br><br>
+
+    <label for="dropdown5">Inter_Group</label>
+   <select id="dropdown5" name="Interg">
+     <option value=0>MPC</option>
+     <option value=1>Diploma</option>
+   </select>
+                       
+    <br><br>
+
+    <label for="intermediatePercentage">Intermediate / Diploma Percentage:</label>
+    <input type="number" id="intermediatePercentage" name="Iper" min="0" max="100" step="0.01">
+
+    <br><br>
+
+      
+    <label for="dropdown2">Branch:</label>
+    <select id="dropdown2" name="Dbranch">
+      <option value=0>Computer Science and Engineering</option>
+      <option value=1>Electronics and Communication Engineering</option>
+      <option value=2>Mechanical Engineering</option>
+    </select>
+
+    <br><br>
+
+    <div class="radio-group">
+        <label for="internships">Internships:</label>
+        <input type="radio" id="yes" name="Ist" value=0>
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="Ist" value=1>
+        <label for="no">No</label>
+                       </div>
+    
+        <br>
+    
+
+    <label for="CGPA">CGPA:</label>
+    <input type="number" id="CGPA" name="Cgpa" min="0" max="100" step="0.01">
+
+    <br><br>
+
+    <label for="dropdown3">Skills</label>
+    <select id="dropdown3" name="skills">
+      <option value=0>DataScience</option>
+      <option value=1>Data Structures and Algorithms</option>
+    </select>
+
+    <br><br>
+    <br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

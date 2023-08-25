@@ -40,4 +40,3 @@ voting_clf = VotingClassifier(
         voting='hard')
 voting_clf.fit(x_train, y_train)
 pickle.dump(voting_clf,open('predection.pkl','wb'))
-    
