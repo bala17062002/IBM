@@ -38,5 +38,9 @@ rf=RandomForestClassifier()
 voting_clf = VotingClassifier(
         estimators=[('lr', log_clf), ('rf', rnd_clf), ('svc', svm_clf)],
         voting='hard')
+# voting_clf = VotingClassifier(
+#     estimators=[('lr', log_clf), ('svc', svm_clf)],
+#     voting='hard')
+
 voting_clf.fit(x_train, y_train)
 pickle.dump(voting_clf,open('predection.pkl','wb'))

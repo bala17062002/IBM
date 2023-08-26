@@ -12,21 +12,22 @@ html {
 }
 
 :root {
+ 
+  --pri-col: white;
+  --sec-col: #000000;
+  --font-col: #467bc2;
+  --font2-col: #214870;
+  --theme-col: white;
+  --stc-col: darkgrey;
+
+}
+
+.dark-theme {
   --pri-col: #000000;
   --sec-col: #f0ffff;
   --font-col: #6597D4;
   --font2-col: #214878;
   --theme-col: #ba9f26;
-  --stc-col: darkgrey;
-
-}
-
-.light-theme {
-  --pri-col: azure;
-  --sec-col: #000000;
-  --font-col: #467bc2;
-  --font2-col: #214870;
-  --theme-col: white;
   --stc-col: darkgrey;
 }
 
@@ -36,13 +37,13 @@ body {
 }
 
 .container {
-  padding: 10px 11%;
+  padding: 10px 7%;
 }
 
 .name {
   text-decoration: none;
   color: var(--font-col);
-  font-size: 23px;
+  font-size: 22px;
 }
 
 .myname {
@@ -58,7 +59,7 @@ body {
 
 .text {
   margin-top: 10%;
-  font-size: 36px;
+  font-size: 34px;
 }
 
 .text h1 {
@@ -80,29 +81,31 @@ body {
 
 }
 
-
-
-
-
 .sm-webpic {
   width: 100%;
   display: flex;
   flex-direction: row;
-
+  margin-top: 6%;
+  margin-bottom: 3%;
   justify-content: flex-start;
   align-items: center;
 }
 
-.webpic {
-  margin-left: auto;
-  align-self: flex-start;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.webpic-img {
-  margin-top: 8px;
-  width: 350px;
-  height: 350px;
+.button-container .btn {
+  margin-right: 20px;
 }
+
+.sub-right {
+  margin-right: 100px;
+  font-weight: 550;
+}
+
 
 .btn {
   font-weight: 600;
@@ -118,7 +121,7 @@ body {
 
 .btn:hover {
   background: var(--font-col);
-  color: var(--sec-col);
+  color: var(--pri-col);
 }
 
 
@@ -161,7 +164,7 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%;
   height: 3px;
-  background: var(--font-col);
+  background: var(--font2-col);
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -176,6 +179,34 @@ nav ul li a:hover::after {
   background: var(--theme-col);
 }
 
+
+.logos {
+  overflow: hidden;
+  padding: 65px 0;
+  background: var(--pri-col);
+  white-space: nowrap;
+}
+.logos:hover .logos-slide{
+  animation-play-state:paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 25s slide infinite linear;
+}
+.logos-slide img {
+  height: 34px;
+  margin: 0 40px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 
 
@@ -229,7 +260,7 @@ nav ul li a:hover::after {
 }
 
 ::placeholder {
-  color: var(--sec-col);
+  color: var(--pri-col);
   font-weight: 550;
   font-size: 17px;
 }
@@ -262,13 +293,12 @@ nav ul li a:hover::after {
 
 .contact-left p i {
   color: var(--stc-col);
-  font-size: 25px;
+  font-size: 20px;
   margin-right: 17px;
 }
 
 .contact-left a i {
   color: var(--sec-col);
-  font-size: 20px;
 }
 
 
@@ -317,9 +347,9 @@ form textarea {
 
 .sub:hover {
   background: var(--font-col);
+  color: var(--pri-col);
   cursor: pointer;
 }
-
 
 #footer {
   background: #6597D4;
@@ -344,3 +374,24 @@ form textarea {
 nav .fas {
   display: none;
 }
+
+#rights{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+}
+
+#footer-heart {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+#footer-heart.clicked {
+ transform: rotate(360deg);
+}
+
+#footer-heart.clickedout{
+  transform: rotate(360deg);
+}
+
+

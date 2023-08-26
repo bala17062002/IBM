@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@300&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --pri-col: #000000;
+  --sec-col: #f0ffff;
+  --font-col: #6597D4;
+  --font2-col: #214878;
+  --theme-col: #ba9f26;
+  --stc-col: darkgrey;
+
+}
+
+.light-theme {
+  --pri-col: azure;
+  --sec-col: #000000;
+  --font-col: #467bc2;
+  --font2-col: #214870;
+  --theme-col: white;
+  --stc-col: darkgrey;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
+    background: white;
+   
+}
+
+.container {
+    padding: 10px 7%;
+  }
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+  
+  .name {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  nav ul {
+    margin-right: 24px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 18px;
+    text-align: right;
+  }
+  
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 550;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    transition: 0.4s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+    height: 3px;
+    background: var(--font2-col);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+  }
+
+ 
+  .text {
+    text-align: center; /* Add this line to center-align the content */
+    margin-top: 110px;
+}
+
+.text h1 {
+    font-size: 4em;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+    background: url(/images/stripes.jpg);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: backText 10s linear infinite;
+}
+
+#interview {
+    display: block;
+    margin: 55px auto; 
+    width: 50%;
+}
+
+@keyframes backText {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+.input_page{
+  margin-top: 8%;
+}
+
+#mywork {
+  padding: 30px 0;
+
+}
+
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 40px;
+  margin-top: 45px;
+}
+
+.work {
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work img {
+  width: 25%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer {
+  width: 25%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), #214870);
+  border-radius: 13px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 15px;
+  transition: height 0.5s;
+}
+
+.layer h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.layer p {
+  color: white;
+  font-weight: bolder;
+
+}
+
+.layer a {
+  margin-top: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 70%;
+  background-color: black;
+}
+
+.work:hover img {
+  transform: scale(1.1);
+}
+
+.work:hover .layer {
+  height: 100%;
+}
+
+
+form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background:linear-gradient(135deg, #5892dd, #08366e );
+  border-radius: 50px;
+}
+
+
+label {
+  display: flexbox;
+  width: 100px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+select{
+  width: 23%;
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 18px;
+  background-color: var(--font2-col);
+  color: white;
+  margin-top: 5px;
+}
+
+input[type="number"] {
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 18px;
+  background-color: var(--font2-col);
+  color: white;
+  margin-top: 5px;
+}
+
+
+#schoolPercentage,
+#intermediatePercentage,
+#CGPA {
+  width: 75px; 
+}

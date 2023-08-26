@@ -33,19 +33,20 @@ def input():
         skill = int(request.form.get('skills'))
         inputarray=np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill]])
         print(inputarray)
+        print( "sataus ",model.predict(inputarray))
         data11=model.predict(inputarray)
         d2 = data11[0]
-        print(d2)
         if d2 == 0:
+            d2=0
             return render_template('result.html')
         else:
+         
             data11 = np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill,d2]])
+            d2=0
             salary = model1.predict(data11)
             return render_template('results.html', data=salary)
     else:
         return render_template('login.html')
-    
-
 @app.route('/<sscs>')
 def sample(sscs):
     return f"<h1>{sscs}</h1>"
@@ -53,8 +54,8 @@ def sample(sscs):
 def reg():
     reg=1
     return redirect(url_for('login'))
-@app.route('/result')
-def result():
-    return render_template('results.html')
+@app.route('/regs')
+def regs():
+    return render_template('register.html')
 if __name__=='__main__':
     app.run(debug=True)

@@ -1,35 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"  content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Predict</title>
+    <script src="https://kit.fontawesome.com/418aae1497.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/main.css')}}">
 
-    <title>Register</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Your Website</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="register-container">
-            <h2>Register</h2>
-            <form>
-                <input type="text" placeholder="Username" name="username">
-                <input type="email" placeholder="Email" name="email">
-                <input type="password" placeholder="Password" name="password">
-                <button type="submit">Register</button>
-            </form>
-            <p>Already registered? <a href="login.html">Login</a></p>
+    
+    <div class="container">
+        <nav>
+          <a class="name" href="">Pathfinder</a>
+          <ul id="sidemenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#contact">Contact</a></li>  
+          </ul>
+        </nav>
+        
+        <div class="text">
+          <h1>Let us know about you better</h1>
+          <img id="interview" src="/images/backpic.jpg" alt="">
         </div>
-    </main>
-    <footer>
-        <p>Contact us at: contact@example.com</p>
-    </footer>
+        
+         <div id="mywork">
+      <h2 class="subtit">Wanna know about your campus placement trends?</h2>
+      <div class="work-list">
+        <div class="work">
+          <img src="/images/Pulla-reddy-college.png" alt="">
+          <div class="layer">
+            <h3>G Pulla Reddy Engineering College</h3>
+            <p>Kurnool | AP</p>
+            <a href="" target="_blank"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        
+      </div>
+    
+  </div>
+
+
+        <div class="input_page">
+          <div class="heading">
+            <h2>Say Goodbye to uncertainty by providing your details</h2>
+          </div>
+        </div>
+
+
+        <form action="/input" method="post">
+            <div class="radio-group">
+              <label for="gender">Gender:</label>
+              <input type="radio" id="male" name="gender" value=1>
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value=0>
+              <label for="female">Female</label>
+              
+            </div>
+            <br>
+            <label for="dropdown1">School Board</label>
+            
+            <select id="dropdown1" name="drop">
+              <option value=1>State</option>
+              <option value=0>Others</option>
+            </select>
+        
+            <br><br>
+        
+            <label for="schoolPercentage">School Percentage:</label>
+            <input type="number" id="schoolPercentage" name="schoolPercentage" min="0" max="100" step="0.01">
+        
+            <br><br>
+           <!--<div class="radio-group"><option value="{{ option }}">{{ option }}</option>
+            <label for="educationType">Education Type:</label>
+            <input type="radio" id="intermediate" name="educationType" value="intermediate">
+            <label for="intermediate">Intermediate</label>
+            <input type="radio" id="diploma" name="educationType" value="diploma">
+            <label for="diploma">Diploma</label>
+           </div>-->
+           <label for="dropdown4">Inter_Board</label>
+           <select id="dropdown4" name="Iboard">
+             <option value=1>State</option>
+             <option value=0>Others</option>
+           </select>
+                               
+            <br><br>
+        
+            <label for="dropdown5">Inter_Group</label>
+           <select id="dropdown5" name="Interg">
+             <option value=1>MPC</option>
+             <option value=0>Diploma</option>
+           </select>
+                               
+            <br><br>
+        
+            <label for="intermediatePercentage">Intermediate / Diploma Percentage:</label>
+            <input type="number" id="intermediatePercentage" name="Iper" min="0" max="100" step="0.01">
+        
+            <br><br>
+        
+              
+            <label for="dropdown2">Branch:</label>
+            <select id="dropdown2" name="Dbranch">
+              <option value=0>Computer Science and Engineering</option>
+              <option value=1>Electronics and Communication Engineering</option>
+              <option value=2>Mechanical Engineering</option>
+            </select>
+        
+            <br><br>
+        
+            <div class="radio-group">
+                <label for="internships">Internships:</label>
+                <input type="radio" id="yes" name="Ist" value=1>
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="Ist" value=0>
+                <label for="no">No</label>
+                               </div>
+            
+                <br>
+            
+        
+            <label for="CGPA">CGPA:</label>
+            <input type="number" id="CGPA" name="Cgpa" min="0" max="100" step="0.01">
+        
+            <br><br>
+        
+            <label for="dropdown3">Skills</label>
+            <select id="dropdown3" name="skills">
+              <option value=0>DataScience</option>
+              <option value=1>Data Structures and Algorithms</option>
+            </select>
+        
+            <br><br>
+            <br><br>
+        
+            <input type="submit" value="Submit">
+          </form>
+
+    </div>
+
+    
+
+   
+
+    <script src="script_input.js"></script>
 </body>
-</html>

@@ -1,6 +1,7 @@
+const element = document.getElementById('salary-counter');
 function animateSalaryCounter(targetValue, duration) {
     const startValue = 0;
-    const element = document.getElementById('salary-counter');
+   
     const increment = targetValue / (duration / 16); 
 
     let currentCount = 0;
@@ -13,7 +14,9 @@ function animateSalaryCounter(targetValue, duration) {
         }
     }, 16);
 }
-animateSalaryCounter(450000, 1200);
+
+animateSalaryCounter(element.innerHTML, 1200);
+
 
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
