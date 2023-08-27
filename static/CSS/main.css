@@ -156,7 +156,6 @@ header {
   display: block;
   transition: transform 0.5s;
 }
-
 .layer {
   width: 25%;
   height: 0;

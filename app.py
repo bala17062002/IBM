@@ -31,31 +31,33 @@ def input():
         Interns = int(request.form.get('Ist'))
         Cgpa = float(request.form.get('Cgpa'))
         skill = int(request.form.get('skills'))
-        inputarray=np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill]])
-        print(inputarray)
-        print( "sataus ",model.predict(inputarray))
-        data11=model.predict(inputarray)
-        d2 = data11[0]
-        if d2 == 0:
-            d2=0
+        if(schoolp<=35 or Interp<=35 or Cgpa<=35):
             return render_template('result.html')
         else:
-         
-            data11 = np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill,d2]])
-            d2=0
-            salary = model1.predict(data11)
-            return render_template('results.html', data=salary)
+            inputarray=np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill]])
+            print(inputarray)
+            print(Degreeb)
+            print( "sataus ",model.predict(inputarray))
+            data11=model.predict(inputarray)
+            d2 = data11[0]
+            if d2 == 0:
+                return render_template('result.html')
+            else:
+            
+                data11 = np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill,d2]])
+                salary = model1.predict(data11)
+                return render_template('results.html', data=salary)
     else:
         return render_template('login.html')
-@app.route('/<sscs>')
-def sample(sscs):
-    return f"<h1>{sscs}</h1>"
-@app.route('/reg')
-def reg():
-    reg=1
-    return redirect(url_for('login'))
-@app.route('/regs')
-def regs():
-    return render_template('register.html')
+# @app.route('/<sscs>')
+# def sample(sscs):
+#     return f"<h1>{sscs}</h1>"
+# @app.route('/reg')
+# def reg():
+#     reg=1
+#     return redirect(url_for('login'))
+@app.route('/main')
+def main():
+    return render_template('main.html')
 if __name__=='__main__':
     app.run(debug=True)

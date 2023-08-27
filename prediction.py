@@ -9,6 +9,9 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error,mean_absolute_error # for calculating the cost function
 from sklearn.ensemble import RandomForestRegressor # for building the model
+from imblearn.over_sampling import RandomOverSampler
+
+
 import pickle
 df = pd.read_csv('Placement_Data_Full_Class.csv')
 df = df.fillna(0)
@@ -30,6 +33,8 @@ scaler = StandardScaler()
 dfx[numeric_columns] = scaler.fit_transform(dfx[numeric_columns])
 x=dfx.iloc[:,:-1]
 y=dfx.iloc[:,-1:]
+ros = RandomOverSampler(random_state=0)
+x_resampled, y_resampled = ros.fit_resample(x, y)
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.7,random_state=42)
 log_clf = LogisticRegression(solver="liblinear", random_state=42)
 rnd_clf = RandomForestClassifier(n_estimators=10, random_state=42)
