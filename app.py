@@ -11,9 +11,9 @@ app=Flask(__name__)
 @app.route('/')
 def welcome(): 
     return render_template('index.html')
-@app.route('/select')
-def select():
-    return render_template('select_clg.html')
+# @app.route('/main')
+# def main():
+#     return render_template('main.html')
 @app.route('/trend')
 def trend():
     return render_template('Clgtrend.html')
@@ -59,5 +59,17 @@ def input():
 @app.route('/main')
 def main():
     return render_template('main.html')
+@app.route('/college')
+def college():
+    return render_template('Clgtrend.html')
+@app.route('/cse')
+def cse():
+    return render_template('Cse.html')
+@app.route('/ece')
+def ece():
+    return render_template('Ece.html')
+@app.route('/me')
+def me():
+    return render_template('Me.html')
 if __name__=='__main__':
     app.run(debug=True)
