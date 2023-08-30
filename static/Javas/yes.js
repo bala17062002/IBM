@@ -63,3 +63,11 @@ function fadeOutConfetti(container) {
 }
 
 createConfetti();
+const footerHeart = document.getElementById('footer-heart');
+
+footerHeart.addEventListener( 'click' , () => {
+  footerHeart.classList.toggle('clicked');
+});
+footerHeart.addEventListener('click', ()=> {
+  footerHeart.classList.toggle('clickedout');
+})

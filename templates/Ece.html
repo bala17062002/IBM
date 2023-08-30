@@ -12,22 +12,22 @@
         <nav>
           <a class="name" href="">Pathfinder</a>
           <ul id="sidemenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#contact">Contact</a></li>  
+            <li><a href="{{url_for('welcome')}}">Home</a></li>
+            <li><a href="{{url_for('welcome')}}">Contact</a></li>    
           </ul>
         </nav>
      <div class="Conu">
       <iframe src="https://us3.ca.analytics.ibm.com/bi/?perspective=dashboard&amp;pathRef=.my_folders%2FEce%2Bdashboard&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;mode=dashboard&amp;subView=model0000018a18c62b5e_00000000" width="1200" height="700" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
         <div class = "content-container">
-          <a href="http://127.0.0.1:5500/cse%20department.html">
+          <a href="{{url_for('college')}}">
           <button class="btn btn1">CSE</button>
           </a>
           <br><br>
-          <a href="http://127.0.0.1:5500/cse%20department.html">
-          <button class="btn btn2">ECE</button>
+          <a href="{{url_for('cse')}}">
+          <button class="btn btn2">CSE</button>
           </a>
           <br><br>
-          <a href="http://127.0.0.1:5500/cse%20department.html">
+          <a href="{{url_for('me')}}">
           <button class="btn btn3">ME</button>
           </a>
           <br><br>

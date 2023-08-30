@@ -14,8 +14,8 @@
         <nav>
           <a class="name" href="">Pathfinder</a>
           <ul id="sidemenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#contact">Contact</a></li>  
+            <li><a href="{{url_for('welcome')}}">Home</a></li>
+            <li><a href="{{url_for('welcome')}}">Contact</a></li>  
           </ul>
         </nav>
         
@@ -28,15 +28,14 @@
       <h1 class="subtit">Wanna know about your campus placement trends?</h1>
       <div class="work-list">
         <div class="work">
-          <img src="{{url_for('static',filename='Images/Pulla-reddy-college.png')}}" alt="">
+          <img src="{{url_for('static',filename='Images/download.jpeg')}}" alt="">
           <div class="layer">
             <h3>G Pulla Reddy Engineering College</h3>
             <p>Kurnool | AP</p>
             <a href="{{url_for('college')}}"><i
                 class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
-        </div>
-        
+        </div> 
       </div>
     
   </div>
@@ -48,7 +47,7 @@
         <h1>Say Goodbye to uncertainty by providing your details</h1>
          </div>
       
-       <form action="/input" method = "post">
+       <form action="/input" method = "post" onsubmit="return validateForm();">
          <div class="user-details">
 
           <div class="input-box">
@@ -157,15 +156,13 @@
            <input type="submit" value="Submit">
          </div>             
        </form>
+       <div id="alert-message" style="display: none;">
+       </div>
     </div>
       
    </div>
    <div id="footer">
-    <h2 class="footer-text">Built By Unity <span id="footer-heart">❤</span><br><span id="rights">All Rights Reserved &TRADE; 2023</span></h2>
+    <h2 class="footer-text">Built By Unity <span id="footer-heart">❤️</span><br><span id="rights">All Rights Reserved &TRADE; 2023</span></h2>
   </div>
-  
- 
-  
-  <script src="{{url_for('static',filename='Javas/script.js')}}"></script>
-
+  <script src="{{url_for('static',filename='Javas/input.js')}}"></script>
 </body>

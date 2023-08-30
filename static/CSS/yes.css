@@ -12,14 +12,12 @@ html {
 }
 
 :root {
- 
   --pri-col: white;
   --sec-col: #000000;
   --font-col: #467bc2;
   --font2-col: #214870;
   --theme-col: white;
   --stc-col: darkgrey;
-
 }
 
 .dark-theme {

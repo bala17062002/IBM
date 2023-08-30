@@ -34,9 +34,9 @@ def input():
         if(schoolp<=35 or Interp<=35 or Cgpa<=35):
             return render_template('result.html')
         else:
+            if(gender=="null"):
+                return f"<h1>Enter correct details</h1>"
             inputarray=np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill]])
-            print(inputarray)
-            print(Degreeb)
             print( "sataus ",model.predict(inputarray))
             data11=model.predict(inputarray)
             d2 = data11[0]
