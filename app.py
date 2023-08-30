@@ -48,7 +48,7 @@ def input():
                 salary = model1.predict(data11)
                 return render_template('results.html', data=salary)
     else:
-        return render_template('login.html')
+        return render_template('main1.html')
 # @app.route('/<sscs>')
 # def sample(sscs):
 #     return f"<h1>{sscs}</h1>"
@@ -58,7 +58,7 @@ def input():
 #     return redirect(url_for('login'))
 @app.route('/main')
 def main():
-    return render_template('main.html')
+    return render_template('main1.html')
 @app.route('/college')
 def college():
     return render_template('Clgtrend.html')

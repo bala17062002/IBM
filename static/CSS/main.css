@@ -31,12 +31,11 @@ html{
 body {
     min-height: 100vh;
     background: white;
-   
 }
 
 .container {
     padding: 10px 7%;
-  }
+}
 
 header {
     position: absolute;
@@ -52,9 +51,9 @@ header {
   
   .name {
     text-decoration: none;
-    color: black;
     cursor: pointer;
     font-size: 22px;
+    color: var(--font-col);
   }
 
   nav {
@@ -100,9 +99,9 @@ header {
 
  
   .text {
-    text-align: center; /* Add this line to center-align the content */
+    text-align: center; 
     margin-top: 110px;
-}
+  }
 
 .text h1 {
     font-size: 4em;
@@ -114,19 +113,19 @@ header {
     -webkit-background-clip: text;
     background-position: 0 0;
     animation: backText 10s linear infinite;
-}
+  }
 
 #interview {
     display: block;
     margin: 55px auto; 
     width: 50%;
-}
+  }
 
 @keyframes backText {
     100% {
         background-position: 2000px 0;
     }
-}
+  }
 
 .input_page{
   margin-top: 8%;
@@ -156,6 +155,7 @@ header {
   display: block;
   transition: transform 0.5s;
 }
+
 .layer {
   width: 25%;
   height: 0;
@@ -208,16 +208,64 @@ header {
   height: 100%;
 }
 
-
+.box{
+  max-width: 900px;
+  width: 100%;
+  padding: 25px 30px;
+}
 form {
   width: 100%;
   margin: 0 auto;
   padding: 20px;
   background:linear-gradient(135deg, #5892dd, #08366e );
-  border-radius: 50px;
+  border-radius: 25px;
 }
 
+.box form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+form .user-details .input-box
+{
+  margin: 20px 0 12px 0;
+  height: 45px;
+  width: calc(100%/2 - 20px);
+}
+
+.user-details .input-box .details {
+  font-weight: 550;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input,label:focus,
+.user-details .input-box input,select:valid{
+  border: #000000;
+}
+
+form .button
+{
+  height: 45px;
+  margin: 45px 38%;
+  
+}
+
+form .button input{
+  height: 100%;
+  width: 60%;
+  letter-spacing: 1px;
+  font-size: 17px;
+  font-weight: 600;
+  outline: none;
+  color: var(--font2-col);
+  border-radius: 15px;
+  cursor: pointer;
+}
+form .button input:hover{
+  color: var(--sec-col);
+  background-color: var(--font-col);
+}
 label {
   display: flexbox;
   width: 100px;
@@ -245,9 +293,56 @@ input[type="number"] {
   margin-top: 5px;
 }
 
-
+#dropdown2 {
+  width: 73%; 
+}
+#dropdown3 {
+  width:35%;
+}
 #schoolPercentage,
 #intermediatePercentage,
 #CGPA {
   width: 75px; 
+}
+
+.heading h1 {
+  font-size: 35px; 
+  margin-top: -5%;
+  margin-bottom: 2%;
+  white-space: nowrap;
+}
+
+#footer {
+  background: #6597D4;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  color: var(--font-col);
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.footer-text {
+  color: white;
+  text-align: center;
+  
+}
+
+#span {
+  color: var(--sec-col);
+  display: block;
+}
+
+#footer-heart {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+#footer-heart.clicked {
+ transform: rotate(360deg);
+}
+
+#footer-heart.clickedout{
+  transform: rotate(360deg);
 }

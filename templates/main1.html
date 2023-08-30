@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Predict</title>
     <script src="https://kit.fontawesome.com/418aae1497.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/main.css')}}">
+
 </head>
 <body>
     
@@ -20,18 +21,18 @@
         
         <div class="text">
           <h1>Let us know about you better</h1>
-          <img id="interview" src="/images/backpic.jpg" alt="">
+          <img id="interview" src="{{url_for('static',filename='Images/backpic.jpg')}}" alt="">
         </div>
         
          <div id="mywork">
       <h1 class="subtit">Wanna know about your campus placement trends?</h1>
       <div class="work-list">
         <div class="work">
-          <img src="/images/Pulla-reddy-college.png" alt="">
+          <img src="{{url_for('static',filename='Images/Pulla-reddy-college.png')}}" alt="">
           <div class="layer">
             <h3>G Pulla Reddy Engineering College</h3>
             <p>Kurnool | AP</p>
-            <a href="" target="_blank"><i
+            <a href="{{url_for('college')}}"><i
                 class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
@@ -47,12 +48,11 @@
         <h1>Say Goodbye to uncertainty by providing your details</h1>
          </div>
       
-       <form>
+       <form action="/input" method = "post">
          <div class="user-details">
 
           <div class="input-box">
             <label class="details" for="dropdown1">School Board</label>
-            
             <select id="dropdown1" name="drop">
               <option value=1>State</option>
               <option value=0>Others</option>
@@ -65,9 +65,9 @@
           <div class="input-box">
           <div class="radio-group">
           <label class="details" for="gender">Gender :</label>
-          <input type="radio" id="male" name="gender" value="male">
+          <input type="radio" id="male" name="gender" value=1>
           <label class="details" for="male">Male</label>
-          <input type="radio" id="female" name="gender" value="female">
+          <input type="radio" id="female" name="gender" value=0>
           <label class="details" for="female">Female</label>    
           </div>
           </div>
@@ -81,15 +81,12 @@
             </div>
 
          <br>
-
-         
-
           <div class="input-box">
             <label class="details" for="dropdown2">Branch :</label>
-            <select id="dropdown2" name="dropdown2">
-            <option value="optionA">Computer Science and Engineering</option>
-            <option value="optionB">Electronics and Communication Engineering</option>
-            <option value="optionC">Mechanical Engineering</option>
+            <select id="dropdown2" name="Dbranch">
+            <option value=0>Computer Science and Engineering</option>
+            <option value=1>Electronics and Communication Engineering</option>
+            <option value=2>Mechanical Engineering</option>
             </select>
             </div>
 
@@ -99,9 +96,9 @@
 
          <div class="input-box">
           <label class="details" for="dropdown4">Intermediate Board :</label>
-          <select id="dropdown4" name="dropdown4">
-          <option value="option1">State</option>
-          <option value="option2">Others</option>
+          <select id="dropdown4" name="Iboard">
+          <option value=1>State</option>
+          <option value=0>Others</option>
           </select>
           </div>
 
@@ -109,19 +106,17 @@
 
         
           <div class="input-box">
-            <label class="details" for="CGPA">CGPA :</label>
-            <input type="number" id="CGPA" name="CGPA" min="0" max="4" >
+            <label class="details" for="CGPA">CGPA (in %):</label>
+            <input type="number" id="CGPA" name="Cgpa" min="0" max="100" >
             </div>
-        
-
          <br>
 
          
          <div class="input-box">
           <label class="details" for="dropdown5">Intermediate Group :</label>
-          <select id="dropdown5" name="dropdown4">
-          <option value="option1">MPC</option>
-          <option value="option2">Diploma</option>
+          <select id="dropdown5" name="Interg">
+          <option value=1>MPC</option>
+          <option value=0>Diploma</option>
           </select>
           </div>
 
@@ -129,9 +124,9 @@
 
          <div class="input-box">
           <label class="details" for="dropdown3">Skills :</label>
-          <select id="dropdown3" name="dropdown2">
-          <option value="optionA">DataScience</option>
-          <option value="optionB">Data Structures and Algorithms</option>
+          <select id="dropdown3" name="skills">
+          <option value=0>DataScience</option>
+          <option value=1>Data Structures and Algorithms</option>
           </select>
           </div>
 
@@ -139,7 +134,7 @@
 
             <div class="input-box">
             <label class="details" for="intermediatePercentage">Intermediate Percentage :</label>
-            <input type="number" id="intermediatePercentage" name="intermediatePercentage" min="0" max="100" >
+            <input type="number" id="intermediatePercentage" name="Iper" min="0" max="100" >
             </div>
 
          <br>
@@ -148,9 +143,9 @@
           <div class="input-box">
             <div class="radio-group">
             <label class="details" for="internships">Internships :</label>
-            <input type="radio" id="yes" name="internships" value="yes">
+            <input type="radio" id="yes" name="Ist" value=1>
             <label class="details" for="yes">Yes</label>
-            <input type="radio" id="no" name="internships" value="no">
+            <input type="radio" id="no" name="Ist" value=0>
             <label class="details" for="no">No</label>
             </div>
             </div>
@@ -162,7 +157,6 @@
            <input type="submit" value="Submit">
          </div>             
        </form>
-      
     </div>
       
    </div>
@@ -172,5 +166,6 @@
   
  
   
-    <script src="script_input.js"></script>
+  <script src="{{url_for('static',filename='Javas/script.js')}}"></script>
+
 </body>
