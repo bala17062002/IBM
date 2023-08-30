@@ -1,5 +1,0 @@
-numpy
-pandas
-imblearn.over_sampling
-pickle
-sklearn
