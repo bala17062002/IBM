@@ -1,15 +1,14 @@
 import requests
 
-API_KEY = "VKOIS-OqmrTs9cSQBE_ru49tg0wFeNwSMQVOJwqbKXa4"
-token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey":
-API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
-mltoken = token_response.json()["access_token"]
 
 
 # Features order - "gender","ssc(percentage)","ssc(State or Others)","Inter(percentage)","Inter_board","Inter_Group","Branch","Internships","CGPA","skill"
 # input format - [[feature values],[feature values]]
 def predict_status_api(features):
-    
+    API_KEY = "VKOIS-OqmrTs9cSQBE_ru49tg0wFeNwSMQVOJwqbKXa4"
+    token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey":
+    API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
+    mltoken = token_response.json()["access_token"]
     # NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account.
 
     header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + mltoken}
@@ -35,6 +34,12 @@ def predict_status_api(features):
 
 
 def predict_salary_api(features):
+    
+    API_KEY = "VKOIS-OqmrTs9cSQBE_ru49tg0wFeNwSMQVOJwqbKXa4"
+    token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey":
+    API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
+    mltoken = token_response.json()["access_token"]
+    
         
     # NOTE: manually define and pass the array(s) of values to be scored in the next line
     header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + mltoken}
