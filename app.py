@@ -1,15 +1,19 @@
 from flask import Flask,render_template,url_for,redirect,request
 import pickle
 import numpy as np
-dropdown_options = ["ssc", "Cbse"]
+# from sklearn.externals import joblib
+from ml_deploy import predict_salary_api,predict_status_api
 
-model = pickle.load(open('predection.pkl','rb'))
-model1 = pickle.load(open('salary.pkl','rb'))
+# model = joblib.load('model.pkl')
+
+# # dropdown_options = ["ssc", "Cbse"]
+
+# model1 = joblib.load('salary.pkl')
 
 app=Flask(__name__)
 
 @app.route('/')
-def welcome(): 
+def welcome():
     return render_template('index.html')
 # @app.route('/main')
 # def main():
@@ -34,19 +38,24 @@ def input():
         if(schoolp<=35 or Interp<=35 or Cgpa<=35):
             return render_template('result.html')
         else:
-            if(gender=="null"):
+            if(gender==None):
                 return f"<h1>Enter correct details</h1>"
             inputarray=np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill]])
-            print( "sataus ",model.predict(inputarray))
-            data11=model.predict(inputarray)
-            d2 = data11[0]
+            # print( "sataus ",model.predict(inputarray))
+
+            predictions = predict_status_api((inputarray).tolist())
+            print('predictions: ',predictions)
+           
+            # data11=model.predict(inputarray)
+            d2 = predictions[0]
             if d2 == 0:
                 return render_template('result.html')
             else:
             
                 data11 = np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill,d2]])
-                salary = model1.predict(data11)
-                return render_template('results.html', data=salary)
+                salary = predict_salary_api((data11).tolist())
+                resu=salary[0]
+                return render_template('results.html', data=resu)
     else:
         return render_template('main1.html')
 # @app.route('/<sscs>')
