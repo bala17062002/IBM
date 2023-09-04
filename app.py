@@ -15,6 +15,9 @@ app=Flask(__name__)
 @app.route('/')
 def welcome():
     return render_template('index.html')
+@app.route('/bot')
+def bot():
+    return render_template('bot.html')
 # @app.route('/main')
 # def main():
 #     return render_template('main.html')

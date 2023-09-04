@@ -7,8 +7,8 @@
 
   <script src="https://kit.fontawesome.com/418aae1497.js" crossorigin="anonymous"></script>
   <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpg') }}" type="image/x-icon">
-
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 
 <body>
@@ -37,9 +37,13 @@
 
       <div class="sm-webpic">
         <div class="button-container">
-            <a href="{{url_for('main')}}" class="btn">Predict Yours</a>
-            
+            <a href="{{url_for('main')}}" class="btn">Predict Yours</a> 
         </div>  
+        <div class="button-container">
+          <a href="{{url_for('bot')}}" class="btn">PathBot
+            <span class="material-symbols-outlined">smart_toy</span>
+          </a>
+      </div>
               
       </div>
 </div>
