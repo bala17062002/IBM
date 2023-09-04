@@ -38,7 +38,7 @@ def input():
         print(gender)
         print(Interns)
         if(schoolp<=35 or Interp<=35 or Cgpa<=35):
-            return f"<h1>fuck</h1>"
+            return render_template('result.html')
         else:
             inputarray=np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill]])
             # print( "sataus ",model.predict(inputarray))
@@ -82,4 +82,4 @@ def ece():
 def me():
     return render_template('Me.html')
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False)
