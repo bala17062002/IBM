@@ -124,18 +124,47 @@ body {
   color: var(--pri-col);
 }
 
-
-
-
-
-
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.cards
+{
+  margin-top: 5%;
+}
 
+.text-card h3
+{
+  font-size: 26px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--sec-col);
+}
+.text-card {
+  opacity: 0;
+  width: 60%;
+  font-size: 20px;
+  color: var(--pri-col);
+  transform: translateX(-50%);
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 5%;
+  background: linear-gradient(45deg, #467bc2, #214870 );
+  transition: opacity 0.5s ease, transform 2.0s ease;
+
+}
+
+.text-card.left-reveal {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.text-card.right-reveal {
+  opacity: 1;
+  transform: translateX(0);
+}
 nav ul {
   margin-right: 24px;
 }
@@ -198,7 +227,27 @@ nav ul li a:hover::after {
   height: 34px;
   margin: 0 40px;
 }
+.aboutmain.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 2s ease, transform 2s ease;
+}
 
+.aboutmain.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.c.fade-in{
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.c.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 @keyframes slide {
   0% {
     transform: translateX(0);

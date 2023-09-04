@@ -19,6 +19,39 @@ footerHeart.addEventListener( 'click' , () => {
 footerHeart.addEventListener('click', ()=> {
   footerHeart.classList.toggle('clickedout');
 })
+const dashh = document.querySelector('.dash');
+
+const options = {
+  threshold: 0.5, 
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+observer.observe(dashh);
+
+const boxx = document.querySelector('.box');
+
+const options2 = {
+  threshold: 0.5, 
+};
+
+const observer2 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, options2);
+
+observer2.observe(boxx);
 // document.addEventListener("DOMContentLoaded", function() {
 //   const form = document.querySelector("form");
 //   const customAlert = document.getElementById("custom-alert");

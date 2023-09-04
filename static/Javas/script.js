@@ -16,18 +16,66 @@ footerHeart.addEventListener('click', ()=> {
   footerHeart.classList.toggle('clickedout');
 })
 
-function validateForm() {
-  var gender = document.getElementById("gender").value;
-  var school = document.getElementById("drop").value;
-  // Repeat for other input fields
-      
-  if (gender === "" || school === "" /* Add conditions for other fields */) {
-      var alertMessage = document.getElementById("alert-message");
-      alertMessage.innerHTML = "Please check the details.";
-      alertMessage.style.display = "block";
-      return false;
+const aboutSection = document.querySelector('.aboutmain');
+
+const options = {
+  threshold: 0.5, 
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+observer.observe(aboutSection);
+
+
+
+  let direction = 'left'; // Start with left
+  function revealCard(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(`${direction}-reveal`);
+      }
+    });
   }
-  return true;
-}
+
+  const cardObserver = new IntersectionObserver(revealCard, {
+    root: null, 
+    rootMargin: '0px', 
+    threshold: 0.5, 
+  });
+
+  const cards = document.querySelectorAll('.text-card');
+
+
+  cards.forEach(card => {
+    cardObserver.observe(card);
+  });
+
+
+
+
+const conSection = document.querySelector('.c');
+
+const options2 = {
+  threshold: 0.3, 
+};
+
+const observer2 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, options2);
+
+observer2.observe(conSection);
+
 
 

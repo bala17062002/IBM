@@ -123,7 +123,27 @@ header {
   .modal-footer {
     text-align: center;
   }
+  .box.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 2s ease, transform 2s ease;
+  }
   
+  .box.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .dash.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 2s ease, transform 2s ease;
+  }
+  
+  .dash.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .modal-close {
     background-color: var(--font-col);
     color: var(--pri-col);
