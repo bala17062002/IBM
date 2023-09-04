@@ -1,4 +1,4 @@
-from flask import Flask,render_template,url_for,redirect,request
+from flask import Flask,render_template,url_for,redirect,request,send_from_directory
 import pickle
 import numpy as np
 # from sklearn.externals import joblib
@@ -81,5 +81,8 @@ def ece():
 @app.route('/me')
 def me():
     return render_template('Me.html')
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico')
 if __name__=='__main__':
-    app.run(debug=False)
+    app.run(debug=True)
