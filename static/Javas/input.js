@@ -19,3 +19,55 @@ footerHeart.addEventListener( 'click' , () => {
 footerHeart.addEventListener('click', ()=> {
   footerHeart.classList.toggle('clickedout');
 })
+// document.addEventListener("DOMContentLoaded", function() {
+//   const form = document.querySelector("form");
+//   const customAlert = document.getElementById("custom-alert");
+//   const okButton = document.querySelector(".modal-close");
+
+//   form.addEventListener("submit", function(event) {
+//     event.preventDefault(); 
+
+//     const requiredFields = [
+//       "gender",
+//       "dropdown1",
+//       "schoolPercentage",
+//       "dropdown2",
+//       "dropdown4",
+//       "CGPA",
+//       "dropdown5",
+//       "intermediatePercentage",
+//       "Ist"
+//     ];
+
+//     let isEmpty = false
+
+//     try{
+
+//       requiredFields.forEach(fieldId=>{
+//         const field = document.getElementById(fieldId);
+//         console.log('fieldId - '+fieldId+ "   "+field)
+//         // if(!field.value || !field.value.trim()){
+//         //   isEmpty = true;
+//         // }
+        
+//       })
+//     }catch(err){
+//       isEmpty = true
+//     }
+//     console.log(isEmpty)
+
+//     // const isEmpty = requiredFields.some(fieldId => {
+//     //   const field = document.getElementById(fieldId);
+//     // });
+
+//     // if (isEmpty) {
+//     //   customAlert.style.display = "block";
+//     // } else {
+//     //   form.submit();
+//     // }
+//   });
+
+//   okButton.addEventListener("click", function() {
+//     customAlert.style.display = "none";
+//   });
+// });

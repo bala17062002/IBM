@@ -46,29 +46,23 @@
       <div class="heading">
         <h1>Say Goodbye to uncertainty by providing your details</h1>
          </div>
-      
-       <form action="/input" method = "post" onsubmit="return validateForm();">
+         <form action="/input"  method="POST" >
          <div class="user-details">
-
           <div class="input-box">
             <label class="details" for="dropdown1">School Board</label>
             <select id="dropdown1" name="drop">
               <option value=1>State</option>
               <option value=0>Others</option>
             </select>
-        
           </div>
-
          <br>
 
           <div class="input-box">
-          <div class="radio-group">
-          <label class="details" for="gender">Gender :</label>
-          <input type="radio" id="male" name="gender" value=1>
-          <label class="details" for="male">Male</label>
-          <input type="radio" id="female" name="gender" value=0>
-          <label class="details" for="female">Female</label>    
-          </div>
+              <label class="details" for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option value=1>Male</option>
+                <option value=0>Female</option>
+              </select>
           </div>
          
 
@@ -136,21 +130,15 @@
             <input type="number" id="intermediatePercentage" name="Iper" min="0" max="100" >
             </div>
 
+         <br> 
+         <div class="input-box">
+          <label class="details" for="Ist">Internships</label>
+          <select id="Ist" name="Ist">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+      </div>
          <br>
-
-         
-          <div class="input-box">
-            <div class="radio-group">
-            <label class="details" for="internships">Internships :</label>
-            <input type="radio" id="yes" name="Ist" value=1>
-            <label class="details" for="yes">Yes</label>
-            <input type="radio" id="no" name="Ist" value=0>
-            <label class="details" for="no">No</label>
-            </div>
-            </div>
-
-         <br>
- 
          </div>
          <div class="button">
            <input type="submit" value="Submit">
@@ -162,7 +150,6 @@
           <div class="modal-footer">
             <button class="modal-close waves-effect waves-light btn">OK</button>
           </div>
-         <script src="{{url_for('static',filename='Javas/input.js')}}"></script>
         </div>            
        </form>
     </div>
@@ -170,5 +157,4 @@
    <div id="footer">
     <h2 class="footer-text">Built By Unity <span id="footer-heart">❤️</span><br><span id="rights">All Rights Reserved &TRADE; 2023</span></h2>
   </div>
-
 </body>

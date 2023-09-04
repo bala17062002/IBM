@@ -24,7 +24,7 @@ def trend():
 @app.route('/input', methods=["POST", "GET"])
 def input():
     if request.method == "POST":
-        
+        #   {% comment %} <script src="{{url_for('static',filename='Javas/input.js')}}"></script> {% endcomment %}
         gender = int(request.form.get('gender'))  # Assuming gender is represented as an integer (e.g., 0 for male, 1 for female)
         School = int(request.form.get('drop'))  # Assuming 'drop' is a numerical identifier for schools
         schoolp = float(request.form.get('schoolPercentage'))
@@ -35,11 +35,11 @@ def input():
         Interns = int(request.form.get('Ist'))
         Cgpa = float(request.form.get('Cgpa'))
         skill = int(request.form.get('skills'))
+        print(gender)
+        print(Interns)
         if(schoolp<=35 or Interp<=35 or Cgpa<=35):
-            return render_template('result.html')
+            return f"<h1>fuck</h1>"
         else:
-            if(gender==None):
-                return f"<h1>Enter correct details</h1>"
             inputarray=np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill]])
             # print( "sataus ",model.predict(inputarray))
 
@@ -55,6 +55,7 @@ def input():
                 data11 = np.array([[gender,schoolp,School,Interp,Interb,Interg,Degreeb,Interns,Cgpa,skill,d2]])
                 salary = predict_salary_api((data11).tolist())
                 resu=salary[0]
+                print(salary)
                 return render_template('results.html', data=resu)
     else:
         return render_template('main1.html')
